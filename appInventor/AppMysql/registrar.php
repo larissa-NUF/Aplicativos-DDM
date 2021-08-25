@@ -8,11 +8,11 @@ $senha = $_POST["senha"];
 $sqlConsulta = $dbCon->query("select * from tbLogin where email = '$email'");
 
 if (mysqli_num_rows($sqlConsulta)>0) {
-	echo "Email já cadastrado";
+	echo "erro_email";
 }else{
 	$sqlRegistrar = $dbCon->query("insert into tbLogin (nome,email,senha) values ('$nome','$email','$senha')");
 	if ($sqlRegistrar) {
-		echo "Email cadastrado";
+		echo "registro_ok";
 	}
 }
 ?>
